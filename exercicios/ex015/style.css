@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(175, 255, 228);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: rgb(64, 224, 171);
+}
+
+h2 {
+  color: rgb(93, 187, 156);
+}
+.iniciante {
+  color: rgba(19, 153, 108, 0.685);
+}
+
+.intermediario {
+    color: rgba(87, 189, 189, 0.829);
+}
+
+.avancado {
+    color: rgba(212, 70, 70, 0.658);
+}
+
+.principal {
+    background-color: rgb(91, 177, 148);
+    color: white;
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}

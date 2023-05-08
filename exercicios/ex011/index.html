@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midias em HTML:5</title>
+</head>
+<body>
+    <h1>Imagens Dinâmicas</h1>
+    <p>vamos trabalhar com fotos dinâmicas</p>
+    <picture>
+        <source media="(max-width:750px )" srcset="images/foto-p.png" type="image/png">
+        <source media="(max-width:1050px )" srcset="images/foto-m.png" type="image/png">
+        <img src="images/foto-g.png" alt="foto-g">
+    </picture>
+    <h1>Audio/midias</h1>
+    <audio preload="metadata" controls autoplay>
+        <source src="midia/guanacast-33.mp3" type="audio/mpeg">
+        <source src="midia/guanacast-33.ogg" type="audio/ogg">
+        <source src="midia/guanacast-33.wav" type="image/wav">
+        <p>Seu navegador não suporta aúdio <a href="midia/guanacast-33.mp3" download="guanacast-33.mp3" type="audio/mpeg"></a></p>
+    </audio>
+</body>
+</html>
