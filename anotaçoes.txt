@@ -1,0 +1,97 @@
+NÃO ESQUEÇA:
+
+1º Passso - Usar posicionamento relativo na tabela:		position: relative;
+
+ Ex:	table {
+           	width: 500px;
+            	border-collapse: collapse;
+            	position: relative;
+	}
+
+
+2º Passso - Fixar o cabeçalho:		position: sticky;
+
+ Ex:	thead {
+            	position: sticky;
+            	top: -1px;
+	}
+
+Mesclagem de Células EXPANSÃO NA PRÁTICA:
+
+Expansão em forma de COLUNA: Para fazer isso, dentro da célula que você quer expandir, você deve inserir o parâmetro HTML " colspan " com o valor " 2 ", fazendo a célula ocupar duas colunas. Se você quiser expandir essa célula para mais de duas colunas (previamente excluir as células vizinhas), altere o valor numérico do parâmetro. Esse valor numérico que define quantas " colunas " que a célula deve expandir.
+
+Expansão em forma de LINHA: Para fazer isso, dentro da célula que você quer expandir, você deve inserir o parâmetro HTML " rowspan " com o valor " 2 ", fazendo a célula ocupar duas linhas. Se você quiser expandir essa célula para mais de duas linhas (previamente excluir as células vizinhas), altere o valor numérico do parâmetro. Esse valor numérico que define quantas " linhas " que a célula deve expandir.
+
+
+Quando temos uma tabela com muitos dados, com muitas colunas e principalmente com muitas linhas, conforme vamos descendo é natural que o cabeçalho fique para cima e "suma", e é nessa hora que algumas vezes acabamos nos perdendo na leitura da tabela, visto que esquecemos aquilo que determinadas colunas querem dizer 
+
+Um cabeçalho fixo pode solucionar esse problema, visto que conforme vamos scrollando a tabela, o cabeçalho se mantem fixo no topo, mantendo os títulos das colunas sempre visíveis. 
+
+Para fazer isso, devemos abrir um seletor para a área da cabeça da nossa tabela (thead), que é onde estão as células de título que constituem o nosso cabeçalho... E dentro desse seletor, declarar a propriedade " position " com o valor " sticky ". Após isso é necessário usar uma propriedade auxiliar do position, o " top "... E como não queremos mudar de lugar o nosso cabeçalho e sim apenas ativar o "sticky", você deve inserir nessa propriedade auxiliar o valor " -1px ", colando o cabeçalho na posição "zero".
+
+Exemplo do código:
+
+thead {
+    position: sticky;
+    top: -1px;
+}
+
+Um ponto positivo é que se em baixo da sua tabela você tiver mais conteúdo, conforme você vai scrollando, o cabeçalho que está fixo na tabela se limita fixo apenas dentro dessa tabela, ele não ficará por cima do resto do seu conteúdo.
+
+Observação: Essa técnica do cabeçalho fixo não está funcionando perfeitamente em todos os navegadores, então use esse recurso com moderação.
+
+
+
+Como nós já sabemos, usamos a tag " th " sempre que queremos criar uma célula de título. Na sua tabela, esse título pode ser referente à uma COLUNA (dados abaixo da célula de título) ou uma LINHA (dados ao lado da célula de título)... Chamamos esse apontamento de onde estão os dados de escopo. 
+
+Anteriormente nós vimos como aplicar e utilizar escopos simples para os th, usando o parâmetro scope com os valores col ou row... Esses valores servem apenas para apontarmos colunas ou linhas de forma única (apenas uma linha ou coluna). Agora, se na nossa tabela temos uma célula de título que foi expandida e que abrange mais de uma linha ou mais de uma coluna, temos que utilizar os escopos de grupo.
+
+Obs.: O W3C recomenda que você SEMPRE USE os escopos em toda e qualquer célula de título ( th ).
+
+ESCOPOS DE GRUPO:
+
+Os escopos de grupo são os seguintes: " colgroup " e " rowgroup " (usar como valor no parâmetro "scope" ). Eles são utilizados para associarmos determinados títulos ( th EXPANDIDO ) à um GRUPO de linhas ou um GRUPO de colunas.
+
+Basicamente, você deve usar os valores de escopo em grupo sempre que a sua célula de título abranger mais de uma linha (conjunto de linhas) ou mais de uma coluna (conjunto de colunas). Se você usar um valor simples (col/row) para apontar para um conjunto, somente a primeira linha ou a primeira coluna desse conjunto será considerada nesse apontamento... Isso não deve ser feito.
+
+Nota: Quando usamos expansão/mesclagem em uma célula de título, nós temos que analisar o apontamento do escopo pelo grupo e não pelo individual.
+
+Entretanto, não é sempre que uma célula de título com expansão/mesclagem irá precisar ter um escopo em grupo. Por mais que o título tenha mesclagem, se os dados desse título estiverem em uma única linha por exemplo, o escopo deve ser simples. Uma célula de título expandida não obrigatoriamente tem que ter um escopo em grupo, é importante que você tenha essa noção e saiba avaliar cada caso.
+
+
+ AGRUPANDO COLUNAS:
+
+Na parte de HTML:
+
+   Ex:	<table>
+        		<colgroup>
+            		        <col class="cnome">
+            		        <col class="c s e x o">
+            		        <col class="cidade">
+            		        <col class="cprof">
+        		</ colgroup>
+		.
+		.
+
+Na parte de CSS:
+
+   Ex:		col cnome {
+            		        background-color: yellow;
+       	 	        }
+		        col  c s e x o {
+			        background-color: green;
+       	 	        }
+		        .
+		        .
+
+Para grupo de colunas:
+
+   Ex:	HTML:	<colgroup>
+            		                <col class="cnome">
+            		                <col class="cgrupo" span="2">	(2 colunas serão formatadas)
+            		                <col class="cprof">
+        		        </ colgroup>
+
+	        CSS:	col cgrupo {
+            		                background-color: red;
+		                }

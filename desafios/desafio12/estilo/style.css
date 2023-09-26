@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+:root {
+   --font-1: Verdana, Arial, sans-serif;
+   --font-2: Passion One, Arial, sans-serif;
+   --font-3: Sriracha, Arial, sans-serif
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-height: 100vh;
+    background-color: dark;
+    font-family: var(--font-1);
+}
+
+
+header {
+    background-color: black;
+    min-height: 10vh; /* Defina a altura mínima como 10% da altura da tela */
+    color: white;
+    text-align: center;
+    padding: 1em; /* Use unidades relativas para o preenchimento */
+    font-family: Passion One, Arial, sans-serif;
+}
+
+header h1 {
+    padding-top: 50px;
+    font-variant: small-caps;
+    font-size: 10vw;
+}
+
+header p {
+    padding-bottom: 50px;
+    color: rgb(192, 188, 188);
+    font-family: var(--font-1);
+}
+ a {
+    text-decoration: none;
+    font-weight: bolder;
+    color: white;
+ }
+
+ a:hover {
+    text-decoration: underline;
+ }
+
+ section {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    line-height: 2em;
+    padding-left: 30px;
+    font-family: var(--font-3);
+    font-size: 4vw;
+ }
+
+ section.normal {
+    background-color: white;
+    color: black;
+ }
+
+ section.imagem {
+    background-color: rgba(0, 0, 0, 0.699);
+    color: white;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.527);
+    background-size: cover;
+    background-attachment: fixed;
+ }
+
+ section#img01 {
+   background-image: url(../imagens/background001.jpg);
+   background-position: right center;
+ }
+
+ section#img02 {
+   background-image: url(../imagens/background002.jpg);
+   background-position: right center;
+ }
+
+ section.imagem > p {
+   display: inline-block;
+   padding-bottom: 2em;
+   padding: 10px;
+   background-color: rgba(0, 0, 0, 0.623);
+   text-shadow: 2px 2px 0px black;
+ }
+
+ footer {
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    font-size: 2vh;
+ }
